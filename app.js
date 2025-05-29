@@ -9,6 +9,8 @@ const port = 4000;
 const mongoose = require('mongoose');
 const { error } = require('jquery');
 mongoose.connect("mongodb+srv://mounikaattuluri123:9UgaY2VLLZqbewAE@todoapp.9anlmdr.mongodb.net/")
+.then(()=>console.log("connected to mongoDB"))
+.catch(err=> console.error("mongoDB connection error:",err ));
 const trySchema = new mongoose.Schema({ name: String });
 const Item = mongoose.model("Task", trySchema);
 const todo = new Item({ name: "java" });
